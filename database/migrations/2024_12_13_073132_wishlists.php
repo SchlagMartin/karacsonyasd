@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
-            $table->string('gift_name');
             $table->string('wishlist_name');
-            $table->unsignedBigInteger('person_id');
-            $table->foreign('person_id')->references('id')->on('person_id')->onDelete('cascade');
+            $table->unsignedBigInteger('people_id');
+            $table->foreign('people_id')->references('id')->on('people')->onDelete('cascade');
             $table->timestamps();
         });
     }

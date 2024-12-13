@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('gift_name');
             $table->string('email');
-            $table->unsignedBigInteger('gift_type_id');
-            $table->foreign('gift_type_id')->references('id')->on('gift_types')->onDelete('cascade');
+            $table->unsignedBigInteger('gift_types_id');
+            $table->foreign('gift_types_id')->references('id')->on('gift_types')->onDelete('cascade');
             $table->timestamps();
         });
     }
